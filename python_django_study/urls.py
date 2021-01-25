@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+import rest_api.api.urls
 from rest_api.views import PeopleViewSet, TraininsViewSet
 from rest_framework import routers
 
@@ -24,6 +26,7 @@ router.register('trainings', TraininsViewSet, basename="Trainings")
 
 urlpatterns = [
     path('', include('rest_api.urls')),
+    path('api/', include(rest_api.api.urls)),
     path('crud/', include(router.urls)),
     path('admin/', admin.site.urls),
 ]

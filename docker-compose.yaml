@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  django-rest-api:
+    container_name: django-rest-api
+    image: pyhton-django-rest-api:1.0.0
+    environment:
+      DJANGO_DEBUG: "False"
+      DJANGO_SECRET_KEY: "123456"
+    ports:
+    - "8000:8000"
